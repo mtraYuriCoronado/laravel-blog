@@ -11,5 +11,8 @@ class PostController extends Controller
     }
     public function create(){
         return "Aqui se mostrará un formulario para crear un nuevo post";
+    }    
+    public function show($post){
+        return "Aqui se muestra el post {$post}";
     }
 }
