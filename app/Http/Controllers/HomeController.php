@@ -9,6 +9,6 @@ class HomeController extends Controller
     //metodo que llamaremos en la ruta
     public function __invoke()
     {
-        return "Bienvenido a la página de inicio";
+        return view('home');
     }
 }
