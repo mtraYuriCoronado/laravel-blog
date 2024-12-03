@@ -10,7 +10,9 @@
 </head>
 
 <body>
-    <h1>Bienvenido a la página principal</h1>
+    <x-h1 type="info">
+        Bienvenido a la página principal
+    </x-h1>
 
     <div class="max-w-4xl mx-auto px-4">
         <x-alert type="danger" class="mb-4">
