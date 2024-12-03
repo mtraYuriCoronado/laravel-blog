@@ -8,5 +8,9 @@
 </head>
 <body>
     <h1>Aqui se mostrará un formulario para crear un nuevo post</h1>
+    <form action="">
+        Titulo: <input type="text"> <br>
+        Contenido: <textarea name="" id="" cols="30" rows="10"></textarea>
+    </form>
 </body>
 </html>

@@ -7,6 +7,8 @@
     <title>Blog en Laravel 11 | Posts</title>
 </head>
 <body>
-    <h1>Aqui se muestra el post <?= $post ?></h1>
+    <h1>Aqui se muestra el post {{ $post }} {{ 'hola' }}</h1>
+
+     
 </body>
 </html>
