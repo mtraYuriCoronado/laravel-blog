@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -36,3 +37,62 @@ Route::get('/', HomeController::class);
 Route::get('/posts', [PostController::class, 'index']);
 Route::get('/posts/create', [PostController::class, 'create']);
 Route::get('/posts/{post}', [PostController::class, 'show']);
+
+# Ejemplo ELOQUENT
+Route::get('prueba', function () {
+    // return "Hola desde la ruta de prueba";
+
+    /*
+    // Crear un nuevo registro
+    # 1. creamos una instancia del modelo
+    $post = new Post;
+
+    # 2. le indicamos las propiedades que concidan con los campos de la tabla
+    $post->title = 'Titulo de prueba 3';
+    $post->content = 'Contenido de prueba 3';
+    $post->category = 'Categoria de prueba 3';
+
+    # 3. insertamos los datos en la bd 
+    $post->save();
+
+    return $post;
+ */
+
+    /*
+    // Actualizar un registro
+    # 1. Recuperar los registros que coincidan con el id 1
+    // $post = Post::find(1);
+
+    # 2. O busca entre los registros los filtrados
+    $post = Post::where('title', 'Titulo de prueba 2')
+            ->first();
+
+    # 3. Actualiza un campo
+    $post->category = 'Desarrollo web';
+    $post->save();
+
+    return $post;
+    */
+
+    /*
+    // Traer mas de un campo
+    $post = Post::where('title','>=', '2')
+            ->get();
+
+    $post = Post::orderBy('id','desc')
+            ->get();   
+    */    
+    
+    /*
+    // Eliminar registros
+    # 1. Recuperar el registro a eliminar
+    $post = Post::find(1);
+    $post->delete();
+    */
+    
+    // Casting de campos
+    $post = Post::find(1);
+    // return $post->published_at->format('d/m/Y');
+    dd($post->is_active);
+
+});
