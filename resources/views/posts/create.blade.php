@@ -1,6 +1,6 @@
 <x-app-layout>
     <h1>Nuevo Post</h1>
-    <form action="/posts" method="POST">
+    <form action="{{route('posts.store')}}" method="POST">
         {{-- Token para enviar un formulario --}}
         @csrf
         <label for="">Titulo:</label> <input type="text" name="title"> <br>
