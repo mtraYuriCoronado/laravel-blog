@@ -14,6 +14,7 @@ class PostSeeder extends Seeder
      */
     public function run(): void
     {
+        /*
         $post = new Post();
         
         $post->title = 'Post 1';
@@ -22,7 +23,7 @@ class PostSeeder extends Seeder
         $post->published_at = now();
         
         $post->save();
-        
+        */
         /*
         $post = new Post();
 

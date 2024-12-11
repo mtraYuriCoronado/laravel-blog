@@ -18,15 +18,19 @@ class PostController extends Controller
     
     public function store(Request $request)
     {
+        Post::create($request->all());
+        /*
         $post = new Post();
         
         $post->title = $request->title;
+        $post->slug = $request->slug;
         $post->category = $request->category;
         $post->content = $request->content;
 
         $post->save();
+        */
 
-        return redirect('/posts');
+        return redirect()->route('posts.index');
         // Inyección de directivas
         //return $request->all();
         // return $request->title;
@@ -34,35 +38,39 @@ class PostController extends Controller
         // return request()->all();
     }
      
-    public function show($post){
-        $post = Post::find($post);
+    public function show(Post $post){
+        
+        // $post = Post::find($post);
         return view('posts.show', compact('post')); 
         // return view('posts.show', ['post' => $post]);
     }
 
-    public function edit($post)
+    public function edit(Post $post)
     {
-        $post = Post::find($post);
+        // $post = Post::find($post);
         return view('posts.edit', compact('post'));
     }
 
-    public function update(Request $request, $post)
+    public function update(Request $request, Post $post)
     {
-        $post = Post::find($post);
+        $post->update($request->all());
+        /*
+        // $post = Post::find($post);
         
         $post->title = $request->title;
+        $post->slug = $request->slug;
         $post->category = $request->category;
         $post->content = $request->content;
 
         $post->save();
-
-        return redirect("/posts/{$post->id}");
+        */
+        return redirect()->route('posts.show', $post);
     }
 
-    public function destroy($post)
+    public function destroy(Post $post)
     {
-        $post = Post::find($post);
+        // $post = Post::find($post);
         $post->delete();
-        return redirect('/posts');
+        return redirect()->route('posts.index');
     }
 }

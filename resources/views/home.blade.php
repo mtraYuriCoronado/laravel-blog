@@ -23,5 +23,6 @@
         </x-alert>
         <p>Hola mundo</p>
         <x-boton>Haz clic aquí</x-boton>
+        <a href="{{route('posts.index')}}">Vamos a los posts!</a>
     </div>
 </x-app-layout>
