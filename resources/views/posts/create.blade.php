@@ -1,7 +1,7 @@
 <x-app-layout>
     <h1>Nuevo Post</h1>
 
-    {{-- @if ($errors->any())
+    @if ($errors->any())
         <div>
             <h2>Erorres</h2>
             <ul>
@@ -12,7 +12,7 @@
                 @endforeach
             </ul>
         </div>
-    @endif --}}
+    @endif
 
     <form action="{{route('posts.store')}}" method="POST">
         {{-- Token para enviar un formulario --}}
