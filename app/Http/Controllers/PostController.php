@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\PostCreateMailable;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PostController extends Controller
 {
@@ -27,7 +29,11 @@ class PostController extends Controller
         ]);
 
         // Asignacion masiva
-        Post::create($request->all());
+        $post = Post::create($request->all());
+        
+
+        // envio de correo electronico posterior a la creacion del post
+        Mail::to('prueba@prueba.com')->send(new PostCreateMailable($post));
         /*
         $post = new Post();
         
